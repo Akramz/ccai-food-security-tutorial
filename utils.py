@@ -190,6 +190,7 @@ def granule_codes_from_bbox(lat_min, lat_max, lon_min, lon_max):
 
 def download_glad_granule(filename, layer="lossyear", version="GFC-2024-v1.12"):
     base_url = f"https://storage.googleapis.com/earthenginepartners-hansen/{version}/"
+    os.makedirs("data", exist_ok=True)  ## fresh envs (Colab) have no data/ dir yet
     try:
         url = base_url + filename
         urllib.request.urlretrieve(url, "data/" + filename)
@@ -691,5 +692,6 @@ def ensure_cdl_sample(
     if not os.path.exists(full_path):
         from torchgeo.datasets import CDL
 
+        os.makedirs("data/cdl", exist_ok=True)  ## fresh envs have no data/cdl dir yet
         CDL(paths="data/cdl", years=[2023], download=True)
     return full_path
