@@ -1,14 +1,14 @@
-codecarbon >= 2.5,<3.0
-ftw-tools >= 1.4.3,<2.0.0
-geopandas >= 1.0.0,<2.0.0
+codecarbon == 2.8.4
+ftw-tools == 1.4.3
+geopandas == 1.1.4
 ipykernel
 leafmap == 0.50.0
 mapclassify == 2.10.0
 mgrs == 1.5.0
 planetary_computer == 1.0.0
 pystac-client == 0.9.0
-rasterio >= 1.4.2,<1.5.0
-scikit-learn >= 1.7.1,<2.0.0
-shapely >= 2.0.0,<3.0.0
-torchgeo >=0.7,<0.8
-tqdm >= 4.0.0,<5.0.0
+rasterio == 1.4.4
+scikit-learn == 1.9.0
+shapely == 2.1.2
+torchgeo == 0.7.2
+tqdm == 4.68.4
