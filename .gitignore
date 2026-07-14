@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Environments
+.venv
+venv/
+env/
+
+# Runtime-downloaded tutorial artifacts (Sentinel-2 tiles, CDL rasters, GLAD granules,
+# model checkpoints, generated boundaries). samples/cdl_14TPN_2023.tif is force-tracked;
+# s2-grid.json is intentionally tracked (do NOT ignore *.json).
+*.tif
+*.tiff
+*.ckpt
+*.gpkg
+data/
+outputs/
