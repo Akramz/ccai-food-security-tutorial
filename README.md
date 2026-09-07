@@ -15,7 +15,7 @@ use.
 `utils.py`, the pinned `requirements.txt`, `s2-grid.json`, and the cached CDL sample) and
 installs dependencies. The notebook defaults to **fast mode** and runs well under two hours.
 
-**Locally** (Python 3.11–3.12):
+**Locally** (Python 3.12–3.13):
 
 ```bash
 python -m venv .venv && source .venv/bin/activate

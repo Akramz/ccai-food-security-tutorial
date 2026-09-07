@@ -164,6 +164,9 @@ crop_calendar_files = {
 }
 
 
+FTW_MODEL_URL = "https://github.com/fieldsoftheworld/ftw-baselines/releases/download/v1/3_Class_FULL_FTW_Pretrained.ckpt"
+
+
 def granule_codes_from_bbox(lat_min, lat_max, lon_min, lon_max):
     # Handle antimeridian by splitting if needed
     if lon_min <= lon_max:
@@ -547,20 +550,9 @@ def download_and_run(tile_id: str, season: str, year: int, buffer: float = 0.1):
         check=True,
     )
 
-    subprocess.run(
-        [
-            "ftw",
-            "model",
-            "download",
-            "--type",
-            "THREE_CLASS_FULL",
-            "-o",
-            "3_Class_FULL_FTW_Pretrained.ckpt",
-        ],
-        check=True,
-    )
-
     model_filename = "3_Class_FULL_FTW_Pretrained.ckpt"
+    if not os.path.exists(model_filename):
+        torch.hub.download_url_to_file(FTW_MODEL_URL, model_filename, progress=True)
 
     if torch.backends.mps.is_available():
         print("Running inference with MPS mode enabled")
